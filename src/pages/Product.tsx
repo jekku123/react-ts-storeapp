@@ -9,6 +9,7 @@ type ProductParams = {
 
 const Product: React.FC = () => {
     const params = useParams<ProductParams>();
+
     const { isLoading, isError, data } = useQuery<IProduct>({
         queryKey: ['product', params.id],
         queryFn: () => fetchSingleProduct(params.id),
